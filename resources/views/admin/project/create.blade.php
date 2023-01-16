@@ -25,6 +25,18 @@
         </div>
 
         <div class="mb-3">
+            <label for="type_id" class="form-label">Type</label>
+            <select class="form-select form-select-lg @error('type_id') 'is-invalid' @enderror" name="type_id" id="type_id">
+                <option selected>Select one</option>
+
+                @foreach ($types as $type )
+                <option value="{{$type->id}}">{{$type->name}}</option>
+                @endforeach
+
+            </select>
+        </div>
+
+        <div class="mb-3">
             <label for="image" class="form-label">Image</label>
             <input type="file" name="image" id="image" class="form-control  @error('image') is-invalid @enderror" placeholder="" aria-describedby="ImageHelper">
             <small id="ImageHelper" class="text-muted">Add image</small>

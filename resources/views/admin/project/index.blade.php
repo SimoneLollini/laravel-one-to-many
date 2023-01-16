@@ -26,6 +26,7 @@ Tools
                     <th scope="col">Title</th>
                     <th scope="col">image</th>
                     <th scope="col">Slug</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Tools</th>
                 </tr>
             </thead>
@@ -35,6 +36,7 @@ Tools
                     <td scope="row">{{$project->title}}</td>
                     <td> <img width="100" class="img-fluid" src="{{asset('storage/' . $project->image)}}" alt="no img"></td>
                     <td> {{$project->slug}}</td>
+                    <td> {{$project->type ? $project->type->name : 'Null'}}</td>
                     <td class="">
                         <a class="btn btn-primary btn-sm m-1 w-75" href="{{route('project.show', $project->slug)}}">Details</a>
                         <a class="btn btn-primary btn-sm m-1 w-75" href="{{route('project.edit', $project->slug)}}">Edit</a>
